@@ -12,7 +12,8 @@ class MyRecyclerViewAdapter(private var mItems: MutableList<ContactList>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     init {
-        mItems.sortBy {it.viewType}
+        mItems.sortBy {it.isFavorite}
+        mItems.reverse()
         notifyDataSetChanged()
     }
 
@@ -34,13 +35,13 @@ class MyRecyclerViewAdapter(private var mItems: MutableList<ContactList>) :
         holder.itemView.setOnClickListener {
             itemClick?.onClick(it, position)
         }
-        when (mItems[position].viewType) {
-            ItemViewType.FAVORITE -> {
+        when (mItems[position].isFavorite) {
+            true ->{
                 (holder as FavoriteViewHolder).bind(mItems[position])
                 holder.isFavorite.setImageResource(R.drawable.fill_heart_120)
             }
 
-            ItemViewType.REGULAR -> {
+            false -> {
                 (holder as RegularViewHolder).bind(mItems[position])
                 holder.isFavorite.setImageResource(R.drawable.heart_120)
             }
@@ -72,7 +73,11 @@ class MyRecyclerViewAdapter(private var mItems: MutableList<ContactList>) :
     }
 
     override fun getItemViewType(position: Int): Int {
-        return mItems[position].viewType
+        return if (mItems[position].isFavorite){
+              ItemViewType.FAVORITE
+        }else{
+             ItemViewType.REGULAR
+        }
     }
 
 }

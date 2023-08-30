@@ -5,5 +5,5 @@ data class ContactList(
     val mImage : Int,
     var mName : String,
     var mNumber : String,
-    var viewType : Int
+    var isFavorite : Boolean
 )

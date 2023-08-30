@@ -18,13 +18,13 @@ class MainActivity : AppCompatActivity() {
 
 
         val myContactList = mutableListOf<ContactList>()
-        myContactList.add(ContactList(R.drawable.baseline_account_box_24,"future","010-1234-5678",2))
-        myContactList.add(ContactList(R.drawable.baseline_account_box_24,"rocky","010-1234-5678",2))
-        myContactList.add(ContactList(R.drawable.baseline_account_box_24,"roddy rich","010-1234-5678",1))
-        myContactList.add(ContactList(R.drawable.baseline_account_box_24,"uzi vert","010-1234-5678",2))
-        myContactList.add(ContactList(R.drawable.baseline_account_box_24,"gunna","010-1234-5678",2))
-        myContactList.add(ContactList(R.drawable.baseline_account_box_24,"drake","010-1234-5678",2))
-        myContactList.add(ContactList(R.drawable.baseline_account_box_24,"thug","010-1234-5678",1))
+        myContactList.add(ContactList(R.drawable.baseline_account_box_24,"future","010-1234-5678",true))
+        myContactList.add(ContactList(R.drawable.baseline_account_box_24,"rocky","010-1234-5678",false))
+        myContactList.add(ContactList(R.drawable.baseline_account_box_24,"roddy rich","010-1234-5678",false))
+        myContactList.add(ContactList(R.drawable.baseline_account_box_24,"uzi vert","010-1234-5678",false))
+        myContactList.add(ContactList(R.drawable.baseline_account_box_24,"gunna","010-1234-5678",false))
+        myContactList.add(ContactList(R.drawable.baseline_account_box_24,"drake","010-1234-5678",false))
+        myContactList.add(ContactList(R.drawable.baseline_account_box_24,"thug","010-1234-5678",true))
 
 
 
